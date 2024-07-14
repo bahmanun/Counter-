@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Increment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .counter {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            width: 350px;
+            height: 200px;
+            padding: 10px 20px;
+            font-size: 50px;
+            background-color: #000080;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bahman's Increment</h1>
+    <p>Tap the button to increment the counter:</p>
+    <div class="counter">0</div>
+    <button class="button" onclick="incrementCounter()">COUNTER</button>
+
+    <audio id="beep-sound" src="beep/beep.mp3"></audio> 
+
+    <script>
+        var counterElement = document.querySelector('.counter');
+        var counter = 0;
+        var beepSound = document.getElementById('beep-sound');
+
+        function incrementCounter() {
+            counter++;
+            counterElement.textContent = counter;
+            if (counter % 100 === 0) {
+                beepSound.play();
+            }
+        }
+    </script>
+</body>
+</html>
